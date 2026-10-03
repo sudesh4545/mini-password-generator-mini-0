@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CipherForge Password Generator</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="top">
+        <a class="brand" href="./"
+          ><span class="logo">⌘</span
+          ><span
+            ><strong>CIPHERFORGE</strong><small>LOCAL SECURITY LAB</small></span
+          ></a
+        >
+        <p class="privacy">Runs privately in your browser</p>
+      </header>
+      <section class="intro">
+        <p class="kicker">ZERO NETWORK · ZERO STORAGE</p>
+        <h1>Make secrets<br /><span>worth keeping.</span></h1>
+        <p>
+          Generate strong passwords and memorable passphrases using your
+          browser's cryptographic random source.
+        </p>
+      </section>
+      <section class="workspace">
+        <article class="panel">
+          <div class="tabs">
+            <button class="active" data-mode="password">Password</button
+            ><button data-mode="passphrase">Passphrase</button>
+          </div>
+          <p class="label result-label">GENERATED RESULT</p>
+          <div class="result">
+            <output id="result"></output
+            ><button class="mini" id="reveal" aria-label="Hide or reveal">
+              ◉</button
+            ><button class="mini" id="copy" aria-label="Copy">⧉</button>
+          </div>
+          <div class="meter"><span id="bar"></span></div>
+          <div class="meter-copy">
+            <b id="strength">Strong</b
+            ><span id="entropy">— bits estimated</span>
+          </div>
+          <div class="actions">
+            <button class="primary" id="generate">Generate new ↻</button
+            ><button id="batchButton">Generate batch</button>
+          </div>
+          <p class="message" id="message" role="status"></p>
+        </article>
+        <aside class="panel">
+          <div id="passwordControls">
+            <div class="range">
+              <div>
+                <p class="label">LENGTH</p>
+                <b id="lengthValue">20</b>
+              </div>
+              <input id="length" type="range" min="8" max="64" value="20" />
+            </div>
+            <div class="options">
+              <label
+                ><input id="lower" type="checkbox" checked /><span>abc</span
+                ><b>Lowercase</b></label
+              ><label
+                ><input id="upper" type="checkbox" checked /><span>ABC</span
+                ><b>Uppercase</b></label
+              ><label
+                ><input id="digits" type="checkbox" checked /><span>123</span
+                ><b>Numbers</b></label
+              ><label
+                ><input id="symbols" type="checkbox" checked /><span>@#%</span
+                ><b>Symbols</b></label
+              >
+            </div>
+            <label class="check"
+              ><input id="ambiguous" type="checkbox" checked /><span
+                ><b>Exclude ambiguous characters</b
+                ><small>Removes 0, O, l and I</small></span
+              ></label
+            >
+          </div>
+          <div id="phraseControls" hidden>
+            <div class="range">
+              <div>
+                <p class="label">WORDS</p>
+                <b id="wordValue">5</b>
+              </div>
+              <input id="words" type="range" min="3" max="8" value="5" />
+            </div>
+            <label class="field"
+              >Word separator<select id="separator">
+                <option value="-">Hyphen —</option>
+                <option value=".">Dot ·</option>
+                <option value="_">Underscore _</option>
+                <option value=" ">Space</option>
+              </select></label
+            ><label class="check"
+              ><input id="capitalize" type="checkbox" checked /><span
+                ><b>Capitalize words</b
+                ><small>Makes boundaries clearer</small></span
+              ></label
+            ><label class="check"
+              ><input id="suffix" type="checkbox" checked /><span
+                ><b>Add number suffix</b
+                ><small>Random two-digit value</small></span
+              ></label
+            >
+          </div>
+        </aside>
+      </section>
+      <section class="panel batch" id="batch" hidden>
+        <p class="kicker">FIVE FRESH OPTIONS</p>
+        <h2>Generated batch</h2>
+        <div id="batchList"></div>
+      </section>
+      <footer>
+        <span>◈ crypto.getRandomValues</span
+        ><span>No generated password is saved or transmitted</span>
+      </footer>
+      <footer class="sudesh-credit" style="position:relative;margin-top:42px;padding:32px 24px 18px;border:1px solid #5261812b;border-radius:18px;background:linear-gradient(135deg,#050a15f2,#071525eb 55%,#16091ceb);color:#91a0b9;font:500 12px/1.7 Inter,system-ui,sans-serif;overflow:hidden">
+        <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(90deg,transparent 49.8%,#22d3ee14 50%,transparent 50.2%),linear-gradient(#a855f70d 1px,transparent 1px);background-size:420px 100%,100% 46px;pointer-events:none"></div>
+        <div style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:42px;align-items:start">
+          <section>
+            <strong style="display:block;color:#f8fafc;font:800 20px/1.1 ui-monospace,monospace;letter-spacing:.04em"><span style="color:#22d3ee">[</span><span style="color:#a855f7">SM</span><span style="color:#22d3ee">]</span></strong>
+            <p style="max-width:430px;margin:16px 0 10px;color:#9eabc1;font-size:14px">Learning by building — from modern web experiences to strong software-engineering fundamentals.</p>
+            <small style="display:block;color:#71829d;font:700 9px ui-monospace,monospace;letter-spacing:.2em">B.TECH IT STUDENT · FULL STACK DEVELOPER · BUILDER</small>
+            <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap">
+              <a aria-label="GitHub" href="https://github.com/sudesh4545" target="_blank" rel="noreferrer" style="display:grid;place-items:center;width:40px;height:40px;border:1px solid #60708e55;border-radius:11px;color:#dce8ff;text-decoration:none">GH</a>
+              <a aria-label="LinkedIn" href="https://www.linkedin.com/in/sudeshmehar3/" target="_blank" rel="noreferrer" style="display:grid;place-items:center;width:40px;height:40px;border:1px solid #60708e55;border-radius:11px;color:#dce8ff;text-decoration:none">in</a>
+              <a aria-label="Email" href="mailto:sudeshmehar3@gmail.com" style="display:grid;place-items:center;width:40px;height:40px;border:1px solid #60708e55;border-radius:11px;color:#dce8ff;text-decoration:none">@</a>
+              <a aria-label="Portfolio" href="https://sudesh4545.github.io/sudesh-portfolio/" target="_blank" rel="noreferrer" style="display:grid;place-items:center;width:40px;height:40px;border:1px solid #60708e55;border-radius:11px;color:#dce8ff;text-decoration:none">↗</a>
+            </div>
+          </section>
+          <section>
+            <small style="display:block;color:#f8fafc;font:800 9px ui-monospace,monospace;letter-spacing:.2em">GET IN TOUCH</small>
+            <a href="mailto:sudeshmehar3@gmail.com" style="display:block;margin-top:17px;color:#9eabc1;text-decoration:none;font-size:14px">sudeshmehar3@gmail.com</a>
+            <p style="margin:12px 0;color:#9eabc1;font-size:14px">New Delhi, India</p>
+            <p style="display:flex;align-items:center;gap:8px;margin:12px 0;color:#bad8cb"><i style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#1ee6a7;box-shadow:0 0 14px #1ee6a7"></i>Open to internships &amp; collaboration</p>
+            <div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:20px"><span style="padding:3px 9px;border:1px solid #52618144;border-radius:5px;font:600 9px ui-monospace,monospace">JavaScript</span><span style="padding:3px 9px;border:1px solid #52618144;border-radius:5px;font:600 9px ui-monospace,monospace">HTML</span><span style="padding:3px 9px;border:1px solid #52618144;border-radius:5px;font:600 9px ui-monospace,monospace">CSS</span></div>
+          </section>
+        </div>
+        <div style="position:relative;margin-top:28px;padding-top:16px;border-top:1px solid #5261812b;color:#65738c;font-size:10px">© 2026 Sudesh Mehar. Built with code, curiosity and creativity.</div>
+      </footer>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
+
+
